@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ansmall-auth demo</title>
+    <style>
+      :root {
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        max-width: 32rem;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.4rem 0.5rem;
+      }
+      button {
+        margin-top: 0.75rem;
+        padding: 0.4rem 0.75rem;
+      }
+      pre {
+        background: #f4f4f4;
+        padding: 0.75rem;
+        overflow: auto;
+      }
+      .err {
+        color: #b00020;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Auth demo</h1>
+    <p>
+      This page talks to the API with
+      <code>credentials: "include"</code> so the session cookie is sent.
+    </p>
+
+    <section>
+      <h2>Register</h2>
+      <label>Email <input type="email" id="regEmail" autocomplete="email" /></label>
+      <label
+        >Password (min 8 chars)
+        <input type="password" id="regPassword" autocomplete="new-password"
+      /></label>
+      <button type="button" id="btnRegister">Register</button>
+    </section>
+
+    <section>
+      <h2>Login</h2>
+      <label>Email <input type="email" id="loginEmail" autocomplete="email" /></label>
+      <label
+        >Password <input type="password" id="loginPassword" autocomplete="current-password"
+      /></label>
+      <button type="button" id="btnLogin">Login</button>
+    </section>
+
+    <section>
+      <h2>Session</h2>
+      <button type="button" id="btnMe">GET /api/me</button>
+      <button type="button" id="btnLogout">Logout</button>
+    </section>
+
+    <h2>Response</h2>
+    <pre id="out">(none yet)</pre>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
